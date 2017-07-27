@@ -1,0 +1,36 @@
+<html>
+	<style type="text/css" media="all">
+			.text1 {
+				color: white;
+				text-shadow: 2px 2px gray;
+				font-family: Verdana;
+			}
+			.align_text {
+				text-align: center;
+				font-family: verdana;
+			}
+	</style>
+	<br>
+	
+	<body background="background.jpg">
+		
+		<center>
+		<form action="cgi-bin/index1.sh" method="get" accept-charset="utf-8">
+			
+			<label class="text1">Location</label>
+			<select id="id_loc" name="name_loc">
+			<option value="loc0" class="select_text">--Select Location--</option>
+			<option value="loc1">Main Building / Kent Ridge Wing</option>
+			<option value="loc2">Medical Center</option>
+			<option value="loc3">Tower Block</option>
+			<option value="loc4">Utility Block</option>
+			</select><br><br>
+
+			<label for="mac_add" class="text1">Enter MAC address</label><br><br>
+			<input id="id_mac_add" type="text" name="name_mac_add" value="">
+			<input type="submit">
+
+		</form>
+		</center>
+	</body>
+</html>

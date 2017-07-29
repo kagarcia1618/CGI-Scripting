@@ -8,3 +8,6 @@ chown -R www-data:www-data /usr/lib/cgi-bin
 cd /etc/apache2/mods-enabled
 ln -s ../mods-available/cgi.load
 service apache2 reload
+
+#Bash-CGI
+https://oinkzwurgl.org/hacking/bash_cgi/

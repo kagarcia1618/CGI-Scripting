@@ -1,0 +1,96 @@
+NUHMC-DS-VSS#show ip arp | inc 10.12.0.47
+Internet  10.12.0.47              0   0023.24c4.ca63  ARPA   Vlan101
+NUHMC-DS-VSS#show mac add | inc 0023.24c4.ca63
+      101 0023.24c4.ca63  dynamic  Yes       20     Po23
+NUHMC-DS-VSS#trace mac 0023.24c4.ca63 0023.24c4.ca63
+Source 0023.24c4.ca63 found on NUHMC-UA-4506L3AA
+1 NUHMC-UA-4506L3AA (10.30.29.16) : Gi2/28 => Gi2/28
+Destination 0023.24c4.ca63 found on NUHMC-UA-4506L3AA
+Layer 2 trace completed
+NUHMC-DS-VSS#
+
+NUHMC-UA-4506L3AA#show auth sess int g2/28 det | inc IPv4|User|ACS|Success|rized|MAC
+          MAC Address:  0023.24c4.ca63
+         IPv4 Address:  10.12.0.47
+            User-Name:  host/923PC124682.nhg.local
+               Status:  Authorized
+              ACS ACL:  xACSACLx-IP-WIRED_AD_ONLY-57e9ebf8
+       dot1x            Authc Success
+          MAC Address:  b4a9.5aac.d01f
+         IPv4 Address:  10.12.64.11
+            User-Name:  B4-A9-5A-AC-D0-1F
+               Status:  Authorized
+              ACS ACL:  xACSACLx-IP-IP_PHONE_TRAFFIC-59182efa
+       mab              Authc Success
+NUHMC-UA-4506L3AA#
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+NUH-CD-VSS#show ip arp | inc 10.11.50.64
+Internet  10.11.50.64            24   c89c.dc6e.baaf  ARPA   Vlan850
+NUH-CD-VSS#sh mac add | inc c89c.dc6e.baaf
+*  850  c89c.dc6e.baaf   dynamic  Yes          0   Gi1/9/6
+NUH-CD-VSS#trace mac c89c.dc6e.baaf c89c.dc6e.baaf
+Source c89c.dc6e.baaf found on NUH-UA-2960S6C
+1 NUH-UA-2960S6C (10.30.26.38) : Gi1/0/6 => Gi1/0/6
+Destination c89c.dc6e.baaf found on NUH-UA-2960S6C
+Layer 2 trace completed
+NUH-CD-VSS#
+
+NUH-UA-45066CA#sh auth sess int Gi4/27 det | inc IPv4|User|ACS|Success|rized|MAC
+          MAC Address:  0023.2465.2b37
+         IPv4 Address:  10.11.46.138
+            User-Name:  host/923PC101481.nhg.local
+               Status:  Authorized
+              ACS ACL:  xACSACLx-IP-WIRED_AD_ONLY-57e9ebf8
+       dot1x            Authc Success
+NUH-UA-45066CA#
+
+NUH-UA-2960S2AD#show auth sess int Gi1/0/27 | inc MAC|IP|User|Status|Success|ACS
+          MAC Address:  0018.7d38.dddf
+           IP Address:  10.11.24.68
+            User-Name:  00-18-7D-38-DD-DF
+               Status:  Authz Success
+              ACS ACL:  xACSACLx-IP-DENY_ALL_TRAFFIC-58aae261
+       mab      Authc Success
+NUH-UA-2960S2AD#
+
+KRW-UA-36509AC#show auth sess int g1/0/4 det | inc IPv4|User|ACS|Success|rized|MAC
+          MAC Address:  0023.2465.2feb
+         IPv4 Address:  10.11.132.151
+            User-Name:  NHG\snmanap
+               Status:  Authorized
+              ACS ACL:  xACSACLx-IP-PERMIT_ALL_TRAFFIC-57452910
+       dot1x            Authc Success
+KRW-UA-36509AC#
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+TOB-CD-VSS#show ip arp | inc 10.12.130.31
+Internet  10.12.130.31            0   c47d.4f2d.fc90  ARPA   Vlan701
+TOB-CD-VSS#sh mac add | inc c47d.4f2d.fc90
+*  701  c47d.4f2d.fc90   dynamic  Yes          0   Po5
+TOB-CD-VSS#trace mac c47d.4f2d.fc90 c47d.4f2d.fc90
+Source c47d.4f2d.fc90 found on TOB-UA-45067A
+1 TOB-UA-45067A (10.12.129.71) : Gi2/1 => Gi2/1
+Destination c47d.4f2d.fc90 found on TOB-UA-45067A
+Layer 2 trace completed
+TOB-CD-VSS#
+
+TOB-UA-45067A#show auth sess int Gi3/38 det | inc IPv4|User|ACS|Success|rized|MAC
+          MAC Address:  c89c.dcd4.4ed1
+         IPv4 Address:  10.12.141.98
+            User-Name:  NHG\chenhsinsun
+               Status:  Authorized
+              ACS ACL:  xACSACLx-IP-PERMIT_ALL_TRAFFIC-57452910
+       dot1x            Authc Success
+TOB-UA-45067A#
+
+TOB-UA-45067A#show auth sess int Gi3/34 det | inc IPv4|User|ACS|Success|rized|MAC
+          MAC Address:  001b.4f38.f31f
+         IPv4 Address:  10.12.164.151
+            User-Name:  00-1B-4F-38-F3-1F
+               Status:  Authorized
+              ACS ACL:  xACSACLx-IP-IP_PHONE_TRAFFIC-59182efa
+       mab              Authc Success
+TOB-UA-45067A#
